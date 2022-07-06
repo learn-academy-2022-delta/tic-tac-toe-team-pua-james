@@ -7,10 +7,19 @@ class App extends Component {
     super(props)
     this.state = {
       squares: [null, null, null, null, null, null, null, null, null],
+      userOne: true,
+      userTwo: false
     }
   }
-
+  handleGamePlay = (index) => {
+    const { squares, userOne, userTwo } = this.state
+      if(index === userOne) {
+        
+     //user input to be one of the nulls, if index === any of the square values put X or O. How do we distinguish between users?   
+      }
+  }
   render() {
+    
     return(
       <>
         <h1>Tic Tac Toe</h1>
