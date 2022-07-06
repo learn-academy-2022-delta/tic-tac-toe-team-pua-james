@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import Square from './components/Square'
 import './App.css'
+import Board from './components/Board'
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      squares: [null, null, null, null, null, null, null, null, null],
+      squares: Array(9).fill(null),
       userOne: true,
       userTwo: false
     }
   }
+
+  //   componentDidMount() {
+  //   let firstPlayer = 'X'(this.state.userOne)
+  //   let secondPlayer = 'O'(this.state.userTwo)
+  //   this.setState({userOne: firstPlayer, userTwo: secondPlayer})
+  // }
+
+
   handleGamePlay = (index) => {
     const { squares, userOne, userTwo } = this.state
       if(index === userOne) {
@@ -30,6 +39,7 @@ class App extends Component {
         key={index}
         value={value}
         index={index}
+        handleGamePlay= {this.handleGamePlay}
         />
         )
           })}
