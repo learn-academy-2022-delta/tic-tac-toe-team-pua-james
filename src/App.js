@@ -8,8 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
-      userOne: true,
-      userTwo: false
+
     }
   }
 
@@ -20,13 +19,13 @@ class App extends Component {
   // }
 
 
-  handleGamePlay = (index) => {
-    const { squares, userOne, userTwo } = this.state
-      if(index === userOne) {
+  // handleGamePlay = (index) => {
+  //   const { squares, userOne, userTwo } = this.state
+  //     if(index === userOne) {
         
      //user input to be one of the nulls, if index === any of the square values put X or O. How do we distinguish between users?   
-      }
-  }
+      // }
+  // }
   render() {
     
     return(
@@ -39,13 +38,14 @@ class App extends Component {
         key={index}
         value={value}
         index={index}
-        handleGamePlay= {this.handleGamePlay}
+        //handleGamePlay= {this.handleGamePlay}
         />
         )
           })}
         </div>
       </>
     )
-  }
-}
+        }
+      }
+
 export default App

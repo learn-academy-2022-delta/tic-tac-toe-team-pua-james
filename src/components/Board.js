@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
+import Square from './Square';
 
 class Board extends Component {
     constructor(props){
         super(props);
         this.state = {
             squares: Array(9).fill(null)
+            // userOne: true,
         };
     }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({squares :squares})
-    // this.props.handleGamePlay(this.props.index)
+    squares[i] = this.state.userOne ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      userOne: !this.state.userOne,
+    });
   }
 
   renderSquare(i) {
@@ -21,7 +25,7 @@ class Board extends Component {
      value = {this.state.squares[i]}
      onClick = {() => this.handleClick(i)}
      />
-    )
+    );
   }
 }
 export default Board
